@@ -14,7 +14,7 @@ public class Conexao {
         
         Class.forName("com.mysql.jdbc.Driver");
         
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/barbearia","hoot"," ");
+        return DriverManager.getConnection("jdbc:mysql://localhost:3306/barbearia","root", "");
         
         } catch (ClassNotFoundException e) {
             throw new SQLException(e.getException());

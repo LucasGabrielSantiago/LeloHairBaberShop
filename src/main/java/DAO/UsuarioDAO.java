@@ -43,7 +43,7 @@ public class UsuarioDAO {
         conn = Conexao.conectaDB();  // Supondo que Conexao é sua classe de conexão
         
         try {
-            String sql = "SELECT * FROM usuario WHERE nome_usuario = ? AND senha = ?";
+            String sql = "SELECT * FROM usuario WHERE usuario = ? AND senha = ?";
             
             PreparedStatement pstm = conn.prepareStatement(sql);
             pstm.setString(1, objusuariodto.getNome_usuario());
