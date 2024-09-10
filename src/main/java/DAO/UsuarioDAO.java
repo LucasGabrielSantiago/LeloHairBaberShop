@@ -7,33 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
-/*
-public class UsuarioDAO {
-
-    Connection conn;
-
-    public ResultSet autenticacaoUsuario(UserDTO objusuariodto){
-        conn = new Conexao().conectaDB();
-
-        try {
-            String sql = "SELECT * FROM usuario where nome_usuario = ? and senha = ? ";
-            
-            PreparedStatement pstm = conn.prepareStatement(sql);
-            pstm.setString(1, objusuariodto.getNome_usuario());
-            pstm.setString(2, objusuariodto.getSenha());
-            
-            ResultSet rs = pstm.executeQuery();
-            return rs;
-
-        } catch (SQLException erro) {
-            JOptionPane.showMessageDialog(null, "UsuarioDAO: " + erro);
-            return null;
-        }         
-    }
-
-}
-*/
-
 public class UsuarioDAO {
 
     Connection conn;

@@ -24,24 +24,3 @@ public class Conexao {
     }
     
 }
-
-
-/*
-public class Conexao {
-    
-    public Connection conectaDB (){
-        Connection conn = null;
-        
-        try {
-            String url = "jdbc:mysql://localhost:3306/barbearia?user=root&password=";
-            conn = DriverManager.getConnection(url);
-            
-        } catch (SQLException erro) {
-            JOptionPane.showConfirmDialog(null, "Conexao" + erro.getMessage());
-        }
-        return conn;
-        
-    }
-}
-
-*/
