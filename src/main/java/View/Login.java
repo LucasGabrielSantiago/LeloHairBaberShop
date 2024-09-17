@@ -123,6 +123,8 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         
+        
+        
         try {
             String nome_usuario, senha_usuario;
         
@@ -138,6 +140,7 @@ public class Login extends javax.swing.JFrame {
             
             if (rsusuariodao.next()) {
                 //chama a tela que eu quero abrir
+                JOptionPane.showMessageDialog(null, "Login efetuado com sucesso");
                 MenuPrincipal objmenuprincipal = new MenuPrincipal();
                 objmenuprincipal.setVisible(true);
                 

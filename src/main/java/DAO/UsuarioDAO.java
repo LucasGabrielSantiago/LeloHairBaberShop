@@ -12,11 +12,18 @@ public class UsuarioDAO {
     Connection conn;
 
     // Método para autenticação do usuário
+
+    /**
+     *
+     * @param objusuariodto
+     * @return
+     * @throws SQLException
+     */
     public ResultSet autenticacaoUsuario(UserDTO objusuariodto) throws SQLException {
-        conn = Conexao.conectaDB();  // Supondo que Conexao é sua classe de conexão
+        conn = ConexaoDAO.conectaDB();  // Supondo que ConexaoDAO é sua classe de conexão
         
         try {
-            String sql = "SELECT * FROM usuario WHERE usuario = ? AND senha = ?";
+            String sql = "SELECT * FROM usuario WHERE nome_usuario = ? AND senha_usuario = ?";
             
             PreparedStatement pstm = conn.prepareStatement(sql);
             pstm.setString(1, objusuariodto.getNome_usuario());
@@ -30,4 +37,6 @@ public class UsuarioDAO {
             return null;
         }
     }
+    
+    //public class void {}
 }

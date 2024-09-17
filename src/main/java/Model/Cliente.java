@@ -8,29 +8,29 @@ import java.util.Date;
 
 public class Cliente extends Pessoa {
     
-    private String enreco;
+    private String endereco;
     private String cep;
 
-    public Cliente(String enreco, String cep, int id, String nome, char sexo, Date dataNascimento, String telefone, String email, String rg) {
+    public Cliente(String endereco, String cep, int id, String nome, char sexo, Date dataNascimento, String telefone, String email, String rg) {
         super(id, nome, sexo, dataNascimento, telefone, email, rg);
-        this.enreco = enreco;
+        this.endereco = endereco;
         this.cep = cep;
     }
 
-    public Cliente(String enreco, String cep, int id, String nome) {
+    public Cliente(String endereco, String cep, int id, String nome) {
         super(id, nome);
-        this.enreco = enreco;
+        this.endereco = endereco;
         this.cep = cep;
     }
     
     
 
-    public String getEnreco() {
-        return enreco;
+    public String getEndereco() {
+        return endereco;
     }
 
-    public void setEnreco(String enreco) {
-        this.enreco = enreco;
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
     public String getCep() {

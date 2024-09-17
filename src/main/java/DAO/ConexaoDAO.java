@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 
-public class Conexao {
+public class ConexaoDAO {
     
     public static Connection conectaDB() throws SQLException{
         
