@@ -6,8 +6,11 @@ package View;
 
 import DAO.ClienteDAO;
 import DTO.ClienteDTO;
+import Model.Agendamento;
 import java.sql.SQLException;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -238,18 +241,32 @@ public class CadastroClientes extends javax.swing.JFrame {
         String nome, sexo, datanasc, telefone, email, rg, endereco, cep;
         
         nome = jTextnome.getText();
-        sexo = jComboSexo.getSelectedItem().toString(); 
-        datanasc = jTextNascimento.getText(); //em fase de testes
+        sexo = jComboSexo.getSelectedItem().toString();     
+        datanasc = jTextNascimento.getText(); //em fase de testes        
         telefone = jTextTelefone.getText();
         email = jTextEmail.getText();
         rg = jTextRg.getText();
         endereco = jTextEndereco.getText();
         cep = jTextCep.getText();
         
+        
+        // Converter a data de dd/MM/yyyy para yyyy/MM/dd
+        SimpleDateFormat formatoEntrada = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat formatoSaida = new SimpleDateFormat("yyyy/MM/dd");
+        String dataConvertida = "";
+        try {
+            Date dataFormatada = formatoEntrada.parse(datanasc); // Converte a String para Date
+            dataConvertida = formatoSaida.format(dataFormatada);  // Converte a Date para o formato yyyy/MM/dd
+        } catch (ParseException e) {
+            JOptionPane.showMessageDialog(null, "Erro ao converter a data: " + e.getMessage());
+            return; // Se houver erro, não continuar
+    }
+        
+        
         ClienteDTO objclientedto = new ClienteDTO();
         objclientedto.setNome_cliente(nome);
         objclientedto.setSexo_cliente(sexo);
-        objclientedto.setData_nas_cliente(datanasc);
+        objclientedto.setData_nas_cliente(dataConvertida);
         objclientedto.setTelefone_cliente(telefone);
         objclientedto.setEmail_cliente(email);
         objclientedto.setRg(rg);
